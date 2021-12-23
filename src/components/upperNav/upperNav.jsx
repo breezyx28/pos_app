@@ -2,7 +2,7 @@ export const UpperNav = () => {
 
     return (
         <div>
-            <div className="flex justify-between items-center bg-white pl-10 h-16">
+            <div className="flex justify-between items-center bg-white pl-10 h-14">
                 <div className="left-side flex items-center">
                     <div className="logo flex items-center">
                         <div className="w-8 h-8 primary-bg rounded-full"></div>
