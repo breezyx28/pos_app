@@ -1,17 +1,20 @@
-export const UpperNav = () => {
+import { useState } from "react"
+
+export const UpperNav = (props) => {
 
     return (
         <div>
-            <div className="flex justify-between items-center bg-white pl-10 h-14">
+            <div className="flex justify-between items-center bg-white md:pl-10 md:px-0 px-6 h-14">
                 <div className="left-side flex items-center">
                     <div className="logo flex items-center">
                         <div className="w-8 h-8 primary-bg rounded-full"></div>
-                        <span className="ml-2 text-xs font-semibold text-gray-400">POS TECHNOLIGIES</span>
+                        <span className="ml-2 text-xs font-semibold text-gray-400 hidden md:flex">POS TECHNOLIGIES</span>
                     </div>
-                    <div className="trail ml-32 text-gray-300 text-xs">
+                    <div className="trail ml-32 text-gray-300 text-xs hidden md:flex">
                         You have 14 day left in your trail. <span className="primary-color ml-1">Select plan</span>
                     </div>
                 </div>
+
                 <div className="right-side h-full">
                     <div className="pl-4 flex items-center justify-between gap-x-12 h-full">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -29,13 +32,26 @@ export const UpperNav = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="add-btn h-full w-40 primary-bg">
-                            <div className="h-full h-full primary-bg">
+
+                        {/* display menu bar when grow to md & upon*/}
+                        <div className="add-btn h-full w-40 md:flex hidden primary-bg">
+                            <div className="h-full w-full primary-bg flex justify-center">
                                 <span className="h-full flex gap-x-2 justify-center items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white font-semibold" viewBox="0 0 20 20" fill="currentColor">
                                         <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
                                     </svg>
                                     <div className="text-white text-lg font-semibold">ADD</div>
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* display menu bar when shrink to md*/}
+                        <div className="h-full flex md:hidden">
+                            <div className="h-full h-full">
+                                <span className="h-full flex gap-x-2 justify-center items-center">
+                                    <svg onClick={props.toggleMenu} xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+                                    </svg>
                                 </span>
                             </div>
                         </div>

@@ -6,27 +6,26 @@ export const Content = (props) => {
         <div className="content-bg w-full h-full">
             <div className="content-wraper w-full h-full p-6">
                 <div className="flex w-full h-full gap-x-6">
-                    <div className="left h-full w-3/5">
-                        <div className="flex flex-col w-full h-full gap-y-14">
+                    <div className="left h-full md:w-3/5 w-full">
+                        <div className="flex flex-col w-full h-full md:gap-y-14 gap-y-8">
 
                             <div className="search-bar w-full h-12 bg-white flex px-3 justify-between items-center">
-                                <input type="text" name="" id="" className="border-0 h-10 text-gray-400 focus:outline-none text-sm w-3/4" placeholder="Find product by name, barcode or sku"/>
-                                <div className="h-full flex justify-around items-center w-1/4 font-semibold text-xs">
+                                <input type="text" name="" id="" className="border-0 h-10 text-gray-400 focus:outline-none text-sm w-full md:w-3/4" placeholder="Find product by name, barcode or sku"/>
+                                <div className="h-full md:flex justify-around items-center hidden md:w-1/4 font-semibold gap-x-1 text-xs ">
                                     <small className="text-gray-600 cursor-pointer">GIFTCARD</small>
                                     <small className="text-gray-400 cursor-pointer">CUSTOMCARE</small>
                                 </div>
                             </div>
-
                             <div className="w-full h-full flex flex-col gap-y-6">
                                 <div className="w-full border-b border-b-gray-400">
-                                    <ul className="flex items-center h-full w-full">
-                                        <li className="px-10 py-4 tab-link cursor-pointer text-sm font-semibold"><small>DESSERTS</small></li>
-                                        <li className="px-10 py-4 tab-link cursor-pointer text-sm font-semibold"><small>FOOD</small></li>
-                                        <li className="px-10 py-4 tab-link cursor-pointer text-sm font-semibold"><small>{'COFFEE&MORE'}</small></li>
+                                    <ul className="flex items-center md:justify-center text-center h-full w-full">
+                                        <li className="md:px-10 flex-auto px-4 py-4 tab-link cursor-pointer text-sm font-semibold"><small>DESSERTS</small></li>
+                                        <li className="md:px-10 flex-auto px-4 py-4 tab-link cursor-pointer text-sm font-semibold"><small>FOOD</small></li>
+                                        <li className="md:px-10 flex-auto px-4 py-4 tab-link cursor-pointer text-sm font-semibold"><small>{'COFFEE&MORE'}</small></li>
                                     </ul>
                                 </div>
                                 <div className="h-full">
-                                    <div className="items-section w-full grid grid-cols-4 gap-4">
+                                    <div className="items-section w-full grid md:grid-cols-4 grid-cols-2 gap-4">
                                         <ItemCard src={"./img/2.jpg"} name={"Skillet Apple Pie"} price={""}/>
                                         <ItemCard src={"./img/1.jpg"} name={"Cherry Dump Cake"} price={""}/>
                                         <ItemCard src={"./img/3.jpg"} name={"Cookiedilla"} price={""}/>
@@ -43,7 +42,7 @@ export const Content = (props) => {
 
                         </div>
                     </div>
-                    <div className="right h-full bg-white w-2/5">
+                    <div className="right h-full bg-white md:w-2/5 hidden md:flex">
                         <div className="p-5 w-full h-full">
                             <div className="flex flex-col justify-between w-full h-full">
                                 <div className="flex flex-col justify-start w-full">

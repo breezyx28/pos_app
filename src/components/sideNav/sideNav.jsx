@@ -1,10 +1,20 @@
 import { SideNavList } from "./sideNavList"
+import { Cart } from "./cartLink"
+import { useEffect, useState } from "react";
 
 export const SideNav = (props) => {
+    const [scrWidth, setScrWidth] = useState(window.innerWidth);
+    window.addEventListener('resize',(e)=>{
+        setScrWidth(e.currentTarget.innerWidth);
+    })
+    // props.toggleState
     return (
-        <div>
-            <div className="w-60 h-full bg-white flex flex-col justify-between items-center">
+        <div className={scrWidth <= 768 ? "absolute z-50 w-60 h-full" : ""}>
+            <div className={`w-60 h-full bg-white md:flex flex-col justify-between items-center ${props.toggleState ? "hidden" : ""}`}>
                 <ul className="flex flex-col w-full">
+                    {/* display this when shrink to md or below */}
+                    <Cart />
+
                     <SideNavList title={"Dashboard"} icon={
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
